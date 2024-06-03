@@ -1,0 +1,92 @@
+<div class="background-container">
+  <h2 class="info">Utilice nuestro buscador para encontrar clases de aprendizaje concreta para ti.</h2>
+  <div class="seeker-container">
+    <div class="form-container">
+      <div class="title">
+        <h2>Buscar clases</h2>
+      </div>
+      <!-- Formulario de busqueda de clases  -->
+      <form  >
+        <div class="form-group">
+          <label class="form-label" for="categoria">Categoría:</label>
+          <select class="form-control" id="categoria" name="categoria">
+            <optgroup label="Asignaturas">
+              <option value="matematicas">Matemáticas</option>
+              <option value="lengua">Lengua</option>
+              <option value="historia">Historia</option>
+              <option value="ciencias">Ciencias</option>
+              <option value="sociales">Sociales</option>
+            </optgroup>
+            <optgroup label="Idiomas">
+              <option value="idiomas-ingles">Inglés</option>
+              <option value="idiomas-frances">Francés</option>
+              <option value="idiomas-aleman">Alemán</option>
+              <option value="idiomas-espanol">Español</option>
+              <option value="idiomas-portugues">Portugués</option>
+              <option value="idiomas-italiano">Italiano</option>
+            </optgroup>
+            <optgroup label="Deportes">
+              <option value="musica">Música</option>
+              <option value="mixtas">Clases Mixtas</option>
+              <option value="boxeo">Boxeo</option>
+              <option value="judo">Judo</option>
+              <option value="karate">Karate</option>
+              <option value="taekwondo">Taekwondo</option>
+              <option value="lucha">Lucha libre</option>
+            </optgroup>
+            <optgroup label="Mixtas">
+              <option value="mixtas">Clases Mixtas</option>
+            </optgroup>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="searchClasses($event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg>Buscar</button>
+       <hr><br>
+        <div class="form-group">
+        <h4>Bucar por ubicación de la clase</h4>
+        <button class="expand-button" (click)="toggleCircle($event)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z" />
+        </svg>Expandir Círculo</button>
+        </div>
+
+       
+      </form>
+    </div>
+  <div id="map-container" class="map-container">
+    <div class="map-container" id="mapSeeker"></div>
+  </div>
+
+  </div>
+<!-- Contenedor del carrusel -->
+  <!-- Contenedor del carrusel de las clases obtenidas por categoría -->
+  <div class="carousel-container" *ngIf="showSearchResults">
+    <!-- Tarjetas de clases -->
+    <div class="carousel">
+      <div class="card-wrapper" *ngFor="let classData of classes">
+        <app-class-card-component [classData]="classData"></app-class-card-component>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Contenedor del carrusel de las clases obtenidas por círculo -->
+  <div class="carousel-container" *ngIf="showCircleResults">
+    <!-- Tarjetas de clases -->
+    <div class="carousel">
+      <div class="card-wrapper" *ngFor="let classData of filteredClasses">
+        <app-class-card-component [classData]="classData"></app-class-card-component>
+      </div>
+    </div>
+  </div>
+  
+  <!-- componente de clase  expansion-->
+  <div>
+    <app-class-expansion [classData]="selectedClass" (closePopupEvent)="closePopup()"
+      *ngIf="selectedClass && (showSearchResults || selectedClass &&(showSearchResults))"></app-class-expansion>
+  </div>
+
+</div>

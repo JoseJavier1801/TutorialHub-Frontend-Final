@@ -1,0 +1,62 @@
+/* Estilos base para todos los tamaños de pantalla */
+.petition-item {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  width: 80%;
+  margin-left: 10%;
+  display: grid;
+  grid-template-columns: 1fr; /* Un solo columna por defecto */
+  gap: 10px;
+}
+
+.petition-info {
+  grid-column: 1 / -1; /* Ocupa todas las columnas */
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end; /* Botones alineados a la derecha */
+}
+
+.round-button {
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.accept-button {
+  background-color: rgb(19, 158, 15);
+  color: white;
+}
+
+.deny-button {
+  background-color: red;
+  color: white;
+}
+
+
+/* Media Query para pantallas más pequeñas (modo móvil) */
+@media screen and (max-width: 768px) {
+  .petition-item {
+    width: 90%; /* Reducir el ancho en pantallas más pequeñas */
+    margin-left: 5%;
+  }
+
+  .petition-info {
+    grid-column: 1 / -1; /* Ocupa todas las columnas */
+  }
+
+  .buttons-container {
+    justify-content: space-between; /* Botones distribuidos horizontalmente */
+  }
+
+  .round-button {
+    padding: 8px 16px; /* Ajustar el padding de los botones */
+    font-size: 14px; /* Tamaño de fuente más pequeño para móvil */
+  }
+}

@@ -1,0 +1,59 @@
+@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+/* Estilos para el contenedor principal */
+.container {
+    background-color: #4e483f; /* Color de fondo */
+    border: 1px solid #000000; /* Borde */
+    border-radius: 5px; /* Bordes redondeados */
+    width: 600px; /* Ancho máximo */
+    margin: auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+h3 {
+  text-align: center;
+  color: white;
+}
+/* Estilos para el formulario en el portapapeles */
+.clipboard-form {
+    border: 2px solid #000000; /* Borde */
+    padding: 20px; /* Relleno */
+    background-color: #e8e6e6;
+}
+
+/* Estilos para los botones */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px; /* Ajuste del margen superior */
+    
+}
+
+.buttons button {
+    flex: 1; /* Ajuste automático del ancho */
+    margin: 5px; /* Margen */
+}
+
+/* Estilos para los mensajes de éxito y error */
+.alert {
+    margin-top: 10px; /* Margen superior */
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Ajustar el ancho al 100%; /* Reducir el ancho del contenedor */
+        padding: 10px; /* Reducir el relleno */
+    }
+
+    .form-group {
+        margin-bottom: 10px; /* Reducir el margen inferior */
+    }
+
+    label {
+        font-size: 14px; /* Reducir el tamaño de la fuente de las etiquetas */
+    }
+
+    .buttons {
+        margin-top: 15px; /* Aumentar el espacio entre los botones y otros elementos */
+    }
+}

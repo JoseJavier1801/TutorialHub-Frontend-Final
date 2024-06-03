@@ -1,0 +1,58 @@
+/* Estilos para el formulario de registro de usuario */
+div {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  overflow-x: hidden;
+  font-size: 25px;
+  font-family: 'Arial', sans-serif;
+}
+
+hr {
+  border: 10px;
+  /* Eliminamos el borde predeterminado */
+  border-top: 5px solid black;
+  /* Añadimos un borde superior de 1px con color blanco */
+  width: 100%;
+  /* Establecemos el ancho al 25% del contenedor padre */
+}
+
+/* Estilos para los campos del formulario */
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+input,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+/* Estilos para la responsividad */
+@media screen and (max-width: 600px) {
+  div {
+    max-width: 100%;
+  }
+}

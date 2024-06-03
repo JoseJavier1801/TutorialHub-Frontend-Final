@@ -1,0 +1,65 @@
+<div class="background-container">
+    <div class="info-container">
+        <h1>Profesores de todos los tipos para ayudarte a mejorar a toda velocidad</h1>
+        <p>Descubre la excelencia con tu profesor más adecuado.</p>
+    </div>
+
+    <div class="row class-card-container justify-content-center">
+        <div class="col-md-12 mb-4">
+            <h3 class="text-center mb-4">En nuestra base de datos tenemos un total de {{ totalClasses }} clases</h3>
+            <div class="row">
+                <div class="col" *ngFor="let classData of visibleClasses">
+                    <app-class-card-component [classData]="classData"></app-class-card-component>
+                </div>
+            </div>
+            <div class="navigation-buttons text-center">
+                <button class="btn btn-primary mr-2" (click)="previousPage()" [disabled]="!hasPreviousPage()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z" />
+                        <path fill-rule="evenodd"
+                            d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z" />
+                    </svg> Anterior
+                </button>
+                <button class="btn btn-primary" (click)="nextPage()" [disabled]="!hasNextPage()">
+                    Siguiente <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z" />
+                        <path fill-rule="evenodd"
+                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z" />
+                    </svg>
+                </button>
+            </div>
+            <hr>
+            <div class="buttons-container">
+                <h3>Ordene las clases a su gusto:</h3>
+                <div class="buttons">
+                    <button class="blue-button" (click)="setNoptionOne()">Ver todas las clases</button>
+                    <div class="price-inputs">
+                        <button class="blue-button" (click)="setNoptionThree()">filtrar por precio</button>
+                        <label for="minPrice">Precio Mínimo:</label>
+                        <input type="number" id="minPrice" [(ngModel)]="minPrice" name="minPrice">
+                        <label for="maxPrice">Precio Máximo:</label>
+                        <input type="number" id="maxPrice" [(ngModel)]="maxPrice" name="maxPrice">
+                    </div>
+                    <button class="blue-button"(click)="setNoptionTwo() ">Ordenar por precio</button>
+                </div>
+            </div>
+            <!-- Aquí se muestran las clases encontradas -->
+            <div *ngIf="classes.length > 0">
+                <div class="row">
+                    <div class="col" *ngFor="let classData of classes">
+                        <app-class-card-component [classData]="classData"></app-class-card-component>
+                    </div>
+                </div>
+            </div>
+            <!-- Mensaje para cuando no se encuentran clases -->
+            <div *ngIf="classes.length === 0" class="text-center">
+                No se encontraron clases.
+            </div>
+            
+        </div>
+    </div>
+</div>

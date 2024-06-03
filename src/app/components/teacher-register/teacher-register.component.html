@@ -1,0 +1,42 @@
+<div [formGroup]="form">
+      <label for="name">Nombre y Apellidos:</label>
+      <input type="text" id="name" formControlName="name">
+
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" id="username" formControlName="username">
+
+      <label for="mail">Correo electrónico:</label>
+      <input type="text" id="mail" formControlName="mail">
+
+      <label for="phone">Teléfono:</label>
+      <input type="text" id="phone" formControlName="phone">
+
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" formControlName="password">
+
+      <label for="date">Fecha de Nacimiento:</label>
+      <input type="date" id="date" formControlName="date">
+
+      <label for="title">Título:</label>
+      <input type="text" id="title" formControlName="title">
+
+      <label for="biography">Biografía:</label>
+      <textarea id="biography" formControlName="biography"></textarea>
+
+      <label for="photo">Foto:</label>
+      <button type="button" (click)="takePic()">Subir Imagen</button>
+
+      <button type="button" (click)="registerTeacher()">Registrar Profesor</button>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+<!-- Bootstrap Toast -->
+<div id="successToast" class="toast align-items-center text-white bg-success" role="alert" aria-live="assertive"
+      aria-atomic="true">
+      <div class="d-flex">
+            <div class="toast-body">
+                  Profesor creado con éxito
+            </div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+</div>

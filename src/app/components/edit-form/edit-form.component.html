@@ -1,0 +1,59 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <input type="text" class="form-control" id="categoria" name="categoria" [(ngModel)]="categoria">
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <input type="text" class="form-control" id="tipo" name="tipo" [(ngModel)]="tipo">
+        </div>
+
+        <div class="form-group">
+            <label for="duracion">Duración:</label>
+            <input type="text" class="form-control" id="duracion" name="duracion" [(ngModel)]="duracion">
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="4"
+                [(ngModel)]="descripcion"></textarea>
+        </div>
+         <div class="form-group">
+            <button type="button" class="btn btn-primary" (click)="getCurrentLocation()">
+                Obtener Ubicación Actual
+            </button>
+        </div>
+
+
+        <div class="form-group">
+            <label for="codigoPostal">Código Postal:</label>
+            <input type="text" class="form-control" id="codigoPostal" name="codigoPostal" [(ngModel)]="codigoPostal">
+        </div>
+
+        <div class="form-group">
+            <label for="provincia">Provincia:</label>
+            <input type="text" class="form-control" id="provincia" name="provincia" [(ngModel)]="provincia">
+        </div>
+
+        <div class="form-group">
+            <label for="localidad">Localidad:</label>
+            <input type="text" class="form-control" id="localidad" name="localidad" [(ngModel)]="localidad">
+        </div>
+
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" [(ngModel)]="direccion">
+        </div> <hr>
+
+    <button type="submit" class="btn btn-primary" (click)="updateClassroom()">
+        Modificar la clase
+    </button>
+    <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+    </div>
+    </form>
+
+ 
+</div>

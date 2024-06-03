@@ -1,0 +1,53 @@
+.petition-container {
+    background-color:#2270ac;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+    color: #ccc;
+}
+.text{
+    height: 200px;
+}
+.petition-form {
+    display: grid;
+    gap: 20px;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+.submit-button{
+   background-color:  #4caf50;
+    border-radius: 10px;
+}
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.confirmation-message {
+    margin-top: 15px;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}

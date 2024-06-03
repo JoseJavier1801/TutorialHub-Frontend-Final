@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+        <tr class="table-header">
+            <th>descripcion</th>
+            <th>tarea</th>
+            <th>Fecha</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let homework of homeworks">
+            <td>{{ homework.description }}</td>
+            <td>
+              
+                    <button class="btn-download" (click)="downloadHomework(homework.id, homework.description)">Descargar</button>
+            </td>
+            <td>{{ homework.datetime | date:'short' }}</td>
+        
+        </tr>
+    </tbody>
+</table>

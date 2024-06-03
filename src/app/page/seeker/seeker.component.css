@@ -1,0 +1,160 @@
+/* styles.css */
+
+@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+/* Estilos generales */
+.background-container {
+  min-height: 100vh;
+  overflow-y: hidden;
+  padding-top: 60px; /* Añade un padding superior para evitar solapamientos con la barra de navegación */
+  font-family: 'Arial', sans-serif;
+ background-color:  #d6edfd;
+  height: 100%;
+}
+
+
+.title {
+  color: #ffffff;
+  text-align: center;
+  border: 2px solid #11A0D9; /* Borde del título */
+  border-radius: 12px;
+  margin-bottom: 4%;
+  padding: 10px 20px;
+  background-color: #39abe9; /* Color de fondo del título */
+}
+
+.seeker-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en dispositivos pequeños */
+  justify-content: space-around; /* Distribuye uniformemente los elementos */
+  padding: 20px; /* Añade un padding para evitar que los elementos se peguen al borde de la pantalla */
+  box-sizing: border-box; /* Asegura que el padding no incremente el ancho total */
+}
+
+.form-container {
+  background-color: #E0E0E0;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(238, 0, 0, 0.1); /* Sombra del formulario */
+  margin-bottom: 20px; /* Añade margen inferior para separarlo de otros elementos */
+  width: calc(35% - 40px); /* Ajusta el ancho con margen incluido */
+  box-sizing: border-box; /* Asegura que el padding no incremente el ancho total */
+  height: 100%;
+  border: 2px solid #b5b9bb;
+}
+.form-control{
+  background-color: #ffffff;
+}
+
+.form-group {
+  margin-bottom: 10px;
+  border-radius: 10px;
+
+}
+
+label {
+  color: #ffffff;
+  margin-bottom: 10px;
+  display: block;
+  text-align: center;
+  background-color: #fff;
+}
+h4 {
+  text-align: center; 
+}
+
+select,
+button {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #3796e4; /* Color de fondo de los campos de entrada */
+  color: #ffffff;
+  font-family: 'Arial', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 40px;
+  
+}
+.info{
+  text-align: center;
+  background-color: rgb(52, 151, 250);
+  color: white;
+  height:50px;
+  
+}
+
+select:hover,
+button:hover {
+  background-color: #11A0D9; /* Color de fondo al pasar el cursor sobre los campos */
+  color: #fff; /* Color del texto al pasar el cursor sobre los campos */
+}
+
+.map-container {
+  width: 900px; /* Ajusta el ancho con margen incluido */
+  height: 440px; /* Ajusta la altura según sea necesario */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px; /* Añade margen inferior para separarlo de otros elementos */
+}
+
+/* Ajusta el margen superior de la primera fila de tarjetas de clase */
+.row:first-child {
+  margin-top: 20px; /* Agrega un margen superior para separar las tarjetas del formulario */
+}
+/* Ajustes para mostrar las tarjetas de clase en dos columnas */
+.row .col-md-6 {
+  flex: 0 0 50%; /* Ocupa el 50% del ancho en dispositivos medianos */
+}
+
+/* Estilo de desplazamiento horizontal para crear el efecto de carrusel */
+
+/* Estilos para el contenedor del carrusel */
+.carousel-container {
+  width: 100%;
+  overflow-x: auto; /* Habilita el desplazamiento horizontal */
+  white-space: nowrap; /* Evita que las tarjetas se envuelvan a la siguiente línea */
+}
+
+/* Estilos para las tarjetas de clase */
+.card-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal; /* Restablece el ajuste del espacio en blanco */
+  margin-right: 10px; /* Añade un margen entre las tarjetas */
+}
+.form-label{
+  color: black;
+  font-size: 20px;
+}
+
+/* Estilo opcional para las tarjetas de clase */
+.card-wrapper app-class-card-component {
+  /* Ajusta el ancho y la altura de las tarjetas según tus necesidades */
+  width: 300px;
+  height: 400px;
+}
+
+
+/* Consulta de medios para tabletas */
+@media only screen and (max-width: 1024px) {
+  /* Ajusta el margen superior de la primera fila de tarjetas de clase en tabletas */
+  .row:first-child {
+    margin-top: 10px; /* Reduce el margen superior en tabletas */
+  }
+}
+
+/* Consulta de medios para dispositivos móviles */
+@media only screen and (max-width: 767px) {
+  /* Ajusta el margen superior de la primera fila de tarjetas de clase en dispositivos móviles */
+  .row:first-child {
+    margin-top: 10px; /* Reduce aún más el margen superior en dispositivos móviles */
+  }
+
+.form-group{
+  width: 100%;
+}
+.form-container{
+width: 100%;
+}
+}

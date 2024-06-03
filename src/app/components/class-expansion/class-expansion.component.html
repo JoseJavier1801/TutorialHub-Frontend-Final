@@ -1,0 +1,80 @@
+<!-- class-expansion.component.html -->
+<div class="popup">
+    <div class="popup-content">
+        <div class="expanded-content">
+            <div class="map-and-info-container">
+                <div class="description-container">
+                    <h3>Información sobre el Profesor de la clase</h3>
+                    <div class="teacher-info">
+                        <img class="teacher-photo"
+                            [src]="classData?.teacher?.photoBase64 ? 'data:image/jpeg;base64,' + classData.teacher.photoBase64 : '/assets/foto/logo2.png'"
+                            alt="Teacher Photo">
+                        <div class="teacher-details">
+                            <p class="teacher-name"><strong>Profesor:</strong> {{ classData?.teacher?.name || 'No
+                                especificado' }}</p>
+                            <p class="teacher-title"><strong>Título:</strong> {{ classData?.teacher?.title || 'No
+                                especificado' }}</p>
+                            <p class="teacher-bio"><strong>Biografía:</strong> {{ classData?.teacher?.biography || 'No
+                                especificada' }}</p>
+                            <p class="teacher-phone"><strong>Teléfono de Contacto:</strong> {{ classData?.teacher?.phone
+                                || 'No especificada' }}</p>
+                            <p class="teacher-email"><strong>Email de Contacto:</strong> {{ classData?.teacher?.mail ||
+                                'No especificada' }}</p>
+                        </div>
+                    </div>
+                    <!-- Información adicional -->
+                    <div class="additional-info">
+                        <h3>Información sobre la clase</h3>
+                        <div *ngIf="classData">
+                            <h4><strong> precio de la Clase:</strong> {{ classData.price || 'No especificada' }}€</h4>
+                            <h4><strong>Categoría:</strong> {{ classData.category || 'No especificada' }}</h4>
+                            <h4><strong>Tipo:</strong> {{ classData.type || 'No especificado' }}</h4>
+                            <h4><strong>Dirección:</strong> {{ classData.direction || 'No especificada' }}</h4>
+                            <h4><strong>Código Postal:</strong> {{ classData.postalCode || 'No especificado' }}</h4>
+                            <h4><strong>Provincia:</strong> {{ classData.province || 'No especificada' }}</h4>
+                            <h4><strong>Duración:</strong> {{ classData.duration || 'No especificada' }}h</h4>
+                            <h4><strong>Localidad:</strong> {{ classData.localidad || 'No especificada' }}</h4>
+                        </div><hr>
+                        <h2>Valoraciones de el profesor</h2>
+                    <!-- Contenedor de las evaluaciones del profesor -->
+                    <div class="assessment-carousel" *ngIf="assessments && assessments.length > 0">
+                        <app-assessment-teacher *ngIf="teacherId && assessments" [assessments]="assessments"></app-assessment-teacher>
+                    </div>
+                    <!-- Mensaje cuando no hay valoraciones -->
+                    <p *ngIf="!(assessments && assessments.length > 0)">No hay valoraciones todavía de este profesor </p>
+
+
+                        <hr>
+                    </div>
+                    <!-- Información acerca de la clase -->
+                    <div class="description-container">
+                        <h3>Descripcion de la clase</h3>
+                        <div class="scrollable-content">
+                            
+                            <p>{{ classData.description || 'Descripción no disponible' }}</p>
+                        </div>
+                        <hr>
+                    </div>
+                    <h3>Ubicación de la clase</h3>
+                    <div class="map-container" id="map"></div>
+                    <hr>
+                </div>
+                <div class="side-content">
+                    <div class="petition-container">
+                        <h3>Envía tu solicitud para la clase:</h3>
+                        <app-petition *ngIf="classData" [classroomId]="classData.id"></app-petition>
+                    </div>
+                    <div class="assessment-container">
+                        <h3>Valore al profesor de la clase:</h3>
+                        <app-rating *ngIf="classData" [teacherId]="classData?.teacher?.id || 0"></app-rating>
+
+                    </div>
+                  
+
+                </div>
+                <!-- Botón para cerrar la expansión -->
+                <button class="btn btn-secondary" (click)="closePopup()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

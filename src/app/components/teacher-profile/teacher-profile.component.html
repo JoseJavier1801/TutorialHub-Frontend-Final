@@ -1,0 +1,24 @@
+<!-- teacher-profile.component.html -->
+<div *ngIf="teacherData" class="profile-container">
+    <div class="profile-content">
+        <div class="profile-header">
+            <h2>Perfil del Profesor</h2>
+        </div>
+       
+        <div class="profile-details">
+            <div class="profile-info">
+                <div *ngIf="teacherData.photo">
+                    <img [src]="getProfileImage()" alt="Foto del profesor" class="teacher-photo">
+                </div>
+                <!-- Datos del perfil del profesor -->
+                <p><strong>Nombre:</strong> {{ teacherData.name }}</p>
+                <p><strong>Nombre de usuario:</strong> {{ teacherData.username }}</p>
+                <p><strong>Correo electrónico:</strong> {{ teacherData.mail }}</p>
+                <p><strong>Teléfono:</strong> {{ teacherData.phone }}</p>
+                <p><strong>Fecha de Nacimiento:</strong> {{ teacherData.date | date:'short' }}</p>
+                <p><strong>Título:</strong> {{ teacherData.title }}</p>
+                <p><strong>Biografía:</strong> {{ teacherData.biography }}</p>
+            </div>
+        </div>
+    </div>
+</div>

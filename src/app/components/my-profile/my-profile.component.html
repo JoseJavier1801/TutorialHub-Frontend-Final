@@ -1,0 +1,21 @@
+<div *ngIf="currentUser" class="profile-container">
+    <div class="profile-content">
+        <div class="profile-header">
+            <h1>Perfil de usuario</h1>
+        </div>
+       
+        <div class="profile-details">
+            <div class="profile-image-container">
+                <!-- Imagen de perfil de usuario  -->
+            <img [src]="getProfileImage()" alt="Foto de perfil">
+            </div>
+            <div class="profile-info">
+                <p><strong>Nombre:</strong> {{ currentUser.name }}</p>
+                <p><strong>Nombre de usuario:</strong> {{ currentUser.username }}</p>
+                <p><strong>Correo electrónico:</strong> {{ currentUser.mail }}</p>
+                <p><strong>Teléfono:</strong> {{ currentUser.phone }}</p>
+                <p><strong>Fecha de Nacimiento:</strong> {{ currentUser.date | date:'short' }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,138 @@
+.profile-container {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 40px auto;
+  width: 100%;
+  max-width: 800px;
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-header h2 {
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.profile-image-container {
+  margin-top: 20px;
+}
+
+.profile-image-container img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 25px;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.profile-info {
+  text-align: left;
+  width: 100%;
+}
+
+.profile-info p {
+  margin: 15px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.settings-button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.settings-button-container app-settings {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-button-container app-settings:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333333;
+  padding: 12px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+
+@media (max-width: 768px) {
+
+.profile-container {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px; /* Reducir el relleno */
+    margin: 20px auto; /* Reducir el margen */
+    width: 100%;
+    max-width: 600px; /* Reducir el ancho máximo */
+    font-family: 'Arial', sans-serif;
+}
+
+.profile-header h1 {
+    color: #333333; /* Cambiar de h2 a h1 */
+    font-size: 20px; /* Reducir el tamaño de fuente */
+    margin-bottom: 10px; /* Reducir el espacio inferior */
+}
+
+.profile-image-container {
+    margin-top: 10px; /* Reducir el espacio superior */
+}
+
+.profile-image-container img {
+    width: 100px; /* Reducir el tamaño de la imagen */
+    height: 100px; /* Reducir el tamaño de la imagen */
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 10px; /* Reducir el espacio superior */
+}
+
+.profile-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px; /* Reducir el espacio superior */
+}
+
+.profile-info p {
+    margin: 10px 0; /* Reducir el espacio entre párrafos */
+    font-size: 16px; /* Reducir el tamaño de fuente */
+}
+}

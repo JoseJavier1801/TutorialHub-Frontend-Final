@@ -1,0 +1,54 @@
+
+.container {
+  max-width: 500px; /* Limita el ancho del formulario */
+  margin: 50px auto; /* Centra el formulario en la pantalla */
+  padding: 20px;
+  background-color: #f9f9f9; /* Color de fondo del formulario */
+  border-radius: 10px; /* Borde redondeado */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espaciado entre grupos de formulario */
+}
+
+label {
+  font-weight: bold; /* Texto en negrita para las etiquetas */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc; /* Borde del campo de entrada */
+  border-radius: 5px; /* Borde redondeado */
+  transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+  outline: none;
+  border-color: #3498db; /* Color del borde al enfocar */
+}
+
+button[type="button"] {
+  padding: 10px 20px;
+  background-color: #3498db; /* Color de fondo del botón */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+button[type="button"]:hover {
+  background-color: #2980b9; /* Color de fondo del botón al pasar el ratón */
+}
+
+#successToast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

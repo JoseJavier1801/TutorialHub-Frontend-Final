@@ -1,0 +1,161 @@
+
+.background-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 60px;
+    position: relative;
+    background-color:  #e2f0fa;
+    
+  
+}
+
+
+.background-container::before,
+.background-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 100%;
+    background-color: rgb(52, 58, 64);
+}
+
+.background-container::before {
+    left: 0;
+}
+
+.background-container::after {
+    right: 0;
+}
+
+.info-container {
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+    background-color: rgb(52, 151, 250);
+    border-radius: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.row.class-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 53px;
+    margin-right: 53px;
+    position: relative;
+    z-index: 1;
+}
+
+.col-md-3.mb-4 {
+    flex: 0 0 calc(50% - 2.25%);
+    margin-bottom: 20px;
+}
+.buttons-container {
+    background-color: rgb(255, 206, 147);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.blue-button {
+    background-color: rgb(55, 92, 203);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.blue-button:hover {
+    background-color: rgb(14, 37, 96);
+}
+
+.price-inputs {
+    display: grid;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+
+@media (min-width: 576px) and (max-width: 1032px) {
+    .col-md-3.mb-4 {
+        flex: 0 0 calc(50% - 2.25%);
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 1032px) {
+    .col-md-3.mb-4 {
+        flex: 0 0 calc(50% - 2.25%);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .background-container::before,
+    .background-container::after {
+        display: none;
+    }
+
+    .info-container {
+        margin: 10px;
+    }
+
+    .row.class-card-container {
+        margin: 0;
+    }
+
+    .col-md-12.mb-4 {
+        flex: 0 0 100%; 
+    }
+
+    .col {
+        padding: 0;
+        margin-bottom: 20px; /* Agregamos margen inferior para separar las tarjetas */
+    }
+
+    .buttons-container {
+        padding: 10px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blue-button {
+        margin-bottom: 10px;
+    }
+}
+
+
+
+.navigation-buttons {
+    margin-top: 10px;
+}
+
+.navigation-buttons button {
+    margin-right: 10px;
+}

@@ -1,0 +1,72 @@
+/* Estilos generales del navbar */
+.navbar {
+  background-color: rgb(13, 110, 253);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Arial', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo del contenedor del navbar */
+.container-fluid {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
+/* Estilos del botón de alternancia (toggle) en dispositivos móviles */
+.navbar-toggler {
+  border-color: #fff;
+}
+
+/* Estilos de la marca (brand) */
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Estilos de los enlaces de navegación */
+.navbar-nav a {
+  color: #fff;
+}
+
+/* Estilo de los enlaces de navegación al pasar el ratón por encima */
+.navbar-nav a:hover {
+  color: rgb(38, 38, 38);
+}
+a .active{
+  color: rgb(38, 38, 38);
+}
+
+/* Estilo del enlace de navegación activo (página actual) */
+.navbar-nav .active {
+  font-weight: bold;
+  color: rgb(38, 38, 38);
+}
+
+/* Ajuste de espaciado en la barra de navegación */
+.navbar-nav {
+  margin-right: 10px; /* Ajusta el margen derecho de la barra de navegación */
+}
+
+/* Estilo del botón de cierre de sesión */
+.btn-danger {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.btn-danger:hover {
+  background-color: #c0392b;
+}
+
+@media screen and (max-width: 768px) {
+  /* Puedes agregar estilos específicos para dispositivos móviles si es necesario */
+  .setting{
+    margin-left: 135px;
+  }
+}

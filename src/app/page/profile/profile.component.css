@@ -1,0 +1,115 @@
+
+.grid-container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-rows: repeat(4, 1fr); /* 4 filas */
+    gap: 20px; /* Espacio entre las celdas */
+    padding: 20px; /* Agregamos un espacio interior */
+    height: 2300px; /* Ajuste de altura para ocupar toda la pantalla */
+    background-color: rgb(98, 97, 97);
+}
+h3 {
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid rgb(35, 40, 40); /* Añadir un borde de 2px de grosor y sólido */
+    padding: 10px; /* Añadir espacio interno para que el texto no toque el borde */
+    color: rgb(51, 49, 49);
+}
+
+.grid-item {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Evitar que el contenido sobresalga */
+}
+
+.profile-sidebar {
+    background-color: #dcdcdc;
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 2; /* Ocupa 2 filas */
+}
+.carousel-wrapper {
+    overflow-y: auto; /* Permitir desplazamiento vertical */
+    max-height: calc(130vh - 300px); /* Altura máxima del carrusel, ajustada según el espacio disponible */
+    padding-right: 20px; /* Añadir un poco de espacio a la derecha para evitar que el contenido se superponga con la barra de desplazamiento */
+    margin-top: 20px; /* Espacio en la parte superior del carrusel */
+}
+
+svg {
+  width: 24px; /* Ajusta el ancho del icono */
+  height: 24px; /* Ajusta la altura del icono */
+  margin-right: 8px; /* Ajusta el margen derecho para separar el icono del texto */
+}
+.form-container {
+    background-color: #dcdcdc;
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 1; /* Ocupa 1 fila */
+    height: 1000px;
+}
+
+.class-carousel {
+    background-color: #dcdcdc;
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 2; /* Ocupa 2 filas */
+    border-color: #2980b9;
+}
+
+.horizontal-menu {
+    background-color:#dcdcdc;
+    grid-column: span 2; /* Ocupa 2 columnas */
+    grid-row: span 1; /* Ocupa 1 fila */
+     text-align: center;
+}
+.buttons {
+    margin-top: 20px; /* Espacio entre el título y los botones */
+}
+
+.blue-button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 0 10px; /* Espacio entre los botones */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.blue-button:hover {
+    background-color: #2980b9; /* Cambio de color al pasar el mouse */
+}
+
+.class-carousel-content {
+ overflow-y: auto; /* Permitir desplazamiento vertical */
+    max-height: calc(150vh - 300px); /* Altura máxima del carrusel, ajustada según el espacio disponible */
+    padding-right: 20px; /* Añadir un poco de espacio a la derecha para evitar que el contenido se superponga con la barra de desplazamiento */
+     margin-top: 40px; /* Ajuste de 20px */
+}
+
+
+/* Media queries para dispositivos móviles y tabletas */
+/* Media queries para dispositivos móviles y tabletas */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna en dispositivos móviles y tabletas */
+        grid-template-rows: auto; /* Ajustar automáticamente las filas */
+        height: auto; /* Altura automática para adaptarse al contenido */
+    }
+
+    .grid-item {
+        margin-bottom: 20px; /* Agregar espacio entre los elementos en dispositivos móviles y tabletas */
+    }
+
+    .buttons {
+      
+        margin-top: 10px; /* Reducir el espacio entre el título y los botones en dispositivos móviles y tabletas */
+    }
+
+    /* Agregar barra de desplazamiento vertical al formulario */
+    .form-container {
+        overflow-y: auto;
+        max-height: 300px; /* Altura máxima del formulario con barra de desplazamiento */
+    }
+}
+

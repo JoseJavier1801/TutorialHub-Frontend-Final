@@ -1,0 +1,58 @@
+<div *ngFor="let petition of petitions" class="petition-item"
+    [style.backgroundColor]="getBackgroundColor(petition.state)">
+    <div class="petition-info">
+    <h3><strong>Nombre del {{ isTeacher ? 'Cliente' :'Profesor'  }}:</strong> {{ petition?.client?.name || 'Usuario no
+        definido' }}</h3>
+
+        <!-- Agregar la imagen del cliente -->
+        <img *ngIf="petition.client_photo" [src]="petition.client_photo" alt="Foto de perfil del cliente" width="100"
+            height="100">
+        <div>
+            <h4><strong>Mensaje:</strong> {{ petition.expanded ? petition.message : petition.message.substring(0, 40) +
+                '...' }}</h4>
+            <h4><strong> Fecha:</strong> {{ petition.date | date: 'medium' }}</h4>
+            <h4><strong>Estado:</strong> {{ petition.state || 'no está especificado todavía' }}</h4>
+            <h4><strong> Correo electrónico del cliente:</strong> {{ petition.client?.mail || 'Usuario no definido' }}
+            </h4>
+            <div class="buttons-container">
+                <button (click)="toggleExpand(petition)" class="round-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-angle-expand"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707" />
+                </svg>{{ petition.expanded ? 'Colapsar' :
+                    'Expandir' }}</button>
+                <button *ngIf="isTeacher" (click)="acceptPetition(petition)"
+                    class="round-button accept-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0" />
+                    </svg>Aceptar</button>
+                <button *ngIf="isTeacher" (click)="denyPetition(petition)"
+                    class="round-button deny-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                    </svg>Denegar</button>
+            </div>
+        </div>
+        <!-- Mostrar el icono de check o x en la esquina inferior izquierda -->
+        <div class="icon-container">
+            <!-- Mostrar el icono de check cuando el estado es 'Aceptada' -->
+            <svg *ngIf="petition.state === 'Aceptada'" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                <path
+                    d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425z" />
+            </svg>
+            <!-- Mostrar el icono de x cuando el estado es 'Denegada' -->
+            <svg *ngIf="petition.state === 'Denegada'" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708" />
+            </svg>
+        </div>
+    </div>
+    <!-- Mostrar el contenido adicional si la petición está expandida -->
+    <div *ngIf="petition.expanded" class="additional-info">
+        <!-- Aquí puedes agregar cualquier contenido adicional que desees mostrar cuando la petición esté expandida -->
+    </div>
+</div>

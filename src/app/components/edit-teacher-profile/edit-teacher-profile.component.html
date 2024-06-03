@@ -1,0 +1,65 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div class="form-group">
+      <label for="name">Nombre y Apellidos:</label>
+      <input type="text" class="form-control" id="name1" formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" class="form-control" id="username1" formControlName="username">
+    </div>
+
+    <div class="form-group">
+      <label for="mail">Correo electrónico:</label>
+      <input type="text" class="form-control" id="mail1" formControlName="mail">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Teléfono:</label>
+      <input type="text" class="form-control" id="phone1" formControlName="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="password">Contraseña:</label>
+      <input type="password" class="form-control" id="password1" formControlName="password">
+    </div>
+
+    <div class="form-group">
+      <label for="date">Fecha de Nacimiento:</label>
+      <input type="date" class="form-control" id="date1" formControlName="date">
+
+    </div>
+
+    <div class="form-group">
+      <label for="title">Título:</label>
+      <input type="text" id="title1" formControlName="title">
+    </div>
+
+    <div class="form-group">
+      <label for="biography">Biografía:</label>
+      <textarea id="biography1" formControlName="biography"></textarea>
+
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Foto:</label>
+      <button type="button" class="btn btn-secondary" (click)="takePic()">Subir Imagen</button>
+    </div>
+  </form>
+
+  <button type="button" class="btn btn-primary" (click)="updateTeacher()">Editar Profesor</button>
+  <button type="button" class="btn btn-secondary" (click)="closeForm()">Cerrar</button>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+<!-- Bootstrap Toast -->
+<div id="successToast" class="toast align-items-center text-white bg-success" role="alert" aria-live="assertive"
+  aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Profesor editado con éxito
+    </div>
+    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>

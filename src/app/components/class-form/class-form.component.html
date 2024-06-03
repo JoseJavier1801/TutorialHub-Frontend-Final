@@ -1,0 +1,129 @@
+<div class="container">
+    <!-- Formulario de creación de clase -->
+<h3><i class="bi bi-bookmarks-fill"></i> Formulario de creación de clase:</h3>
+
+    <form (ngSubmit)="submitForm()" class="clipboard-form">
+        <div class="form-group">
+            <label for="categoria">Categoría:</label>
+            <select class="form-control" id="categoria" name="categoria" [(ngModel)]="formData.category">
+                <optgroup label="Asignaturas">
+                    <option value="matematicas">Matemáticas</option>
+                    <option value="lengua">Lengua</option>
+                    <option value="historia">Historia</option>
+                    <option value="ciencias">Ciencias</option>
+                    <option value="sociales">Sociales</option>
+                </optgroup>
+                <optgroup label="Idiomas">
+                    <option value="idiomas-ingles">Inglés</option>
+                    <option value="idiomas-frances">Francés</option>
+                    <option value="idiomas-aleman">Alemán</option>
+                    <option value="idiomas-espanol">Español</option>
+                    <option value="idiomas-portugues">Portugués</option>
+                    <option value="idiomas-italiano">Italiano</option>
+                </optgroup>
+                <optgroup label="Deportes">
+                    <option value="musica">Música</option>
+                    <option value="mixtas">Clases Mixtas</option>
+                    <option value="boxeo">Boxeo</option>
+                    <option value="judo">Judo</option>
+                    <option value="karate">Karate</option>
+                    <option value="taekwondo">Taekwondo</option>
+                    <option value="lucha">Lucha libre</option>
+                </optgroup>
+                <optgroup label="Mixtas">
+                    <option value="mixtas">Clases Mixtas</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <!-- Opciones de los tipos -->
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo" [(ngModel)]="formData.type">
+                <option value="inicial">Inicial</option>
+                <option value="basica">Básica</option>
+                <option value="medio-superior">Medio Superior</option>
+                <option value="superior">Superior</option>
+                <option value="universidad">Universidad</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="duracion">Duración:</label>
+            <input type="text" class="form-control" id="duracion" name="duracion" [(ngModel)]="formData.duration">
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="4"
+                [(ngModel)]="formData.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="precio">Precio:</label>
+            <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="formData.price">
+        </div>
+        
+        <div class="form-group">
+            <label for="video">Subir video:</label>
+            <input type="file" id="video" name="videoUpload" (change)="onVideoSelected($event)">
+        </div>
+
+
+        <!-- Botón para activar la localización -->
+        <div class="form-group">
+            <label for="mapPoint">Seleccione la localización de su clase:</label>
+            <div id="mapPoint" style="height: 150px;"></div>
+        </div>
+
+        <!-- Información de dirección -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="codigoPostal">Código Postal:</label>
+                    <input type="text" class="form-control" id="codigoPostal" name="codigoPostal"
+                        [(ngModel)]="formData.postalCode">
+                </div>
+                <div class="form-group">
+                    <label for="provincia">Provincia:</label>
+                    <input type="text" class="form-control" id="provincia" name="provincia"
+                        [(ngModel)]="formData.province">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="localidad">Localidad:</label>
+                    <input type="text" class="form-control" id="localidad" name="localidad"
+                        [(ngModel)]="formData.localidad">
+                </div>
+                <div class="form-group">
+                    <label for="direccion">Dirección:</label>
+                    <input type="text" class="form-control" id="direccion" name="direccion"
+                        [(ngModel)]="formData.direction">
+                </div>
+            </div>
+        </div>
+
+        <!-- Botones de enviar y cerrar -->
+        <div class="form-group buttons">
+            <button type="submit" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journals"
+                viewBox="0 0 16 16">
+                <path
+                    d="M5 0h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 2 2 0 0 1-2 2H3a2 2 0 0 1-2-2h1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1H1a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v9a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1H3a2 2 0 0 1 2-2" />
+                <path
+                    d="M1 6v-.5a.5.5 0 0 1 1 0V6h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V9h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 2.5v.5H.5a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1H2v-.5a.5.5 0 0 0-1 0" />
+            </svg>
+                Crear la clase
+            </button>
+            
+        </div>
+    </form>
+
+    <!-- Mensajes de éxito y error -->
+    <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+</div>

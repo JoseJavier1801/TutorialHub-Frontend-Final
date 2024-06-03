@@ -1,0 +1,126 @@
+@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.489);
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    background-color: rgb(255, 255, 255);
+    border-color: #b5b0b0;
+}
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container {
+  position: relative;
+}
+
+.video-container video {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+}
+
+
+.rating svg {
+  font-size: 20px; /* Tamaño deseado para los iconos */
+}
+svg {
+  width: 20px; /* Ajusta el ancho del icono */
+  height: 20px; /* Ajusta la altura del icono */
+  margin-right: 8px; /* Ajusta el margen derecho para separar el icono del texto */
+}
+
+.card-img-left {
+    width: 200px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    border-top-left-radius: 10px; /* Redondea la esquina superior izquierda */
+    border-bottom-left-radius: 10px; /* Redondea la esquina inferior izquierda */
+}
+
+.card-body {
+    padding: 20px;
+    flex: 1; /* Ajusta la anchura del contenido para que ocupe el espacio restante */
+}
+
+.card-text {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.btn {
+  margin-left: 10px;
+    margin-left: px;
+    padding: 8px 16px; /* Reducir el padding para disminuir el tamaño */
+    border-radius: 20px; /* Hacer los botones cilíndricos */
+    cursor: pointer;
+    width: 180px;
+}
+
+.btn-danger,
+.btn-primary {
+    font-size: 14px; /* Reducir el tamaño del texto */
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+
+.btn:hover {
+    opacity: 0.8;
+}
+.btn-info {
+    background-color: #007bff; /* Azul oscuro para "Ver Video" */
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d; /* Gris oscuro para "Leer más" */
+    color: #fff;
+}
+
+
+
+/* Media queries para ajustar el diseño en dispositivos móviles y tablets */
+@media screen and (max-width: 576px) {
+    .card {
+        max-width: 100%; /* Ocupar todo el ancho disponible en dispositivos móviles */
+    }
+
+    .card-img-left {
+        max-height: 150px; /* Reducir la altura máxima en dispositivos móviles */
+    }
+}
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .card {
+        max-width: 90%; /* Reducir el ancho máximo en tablets */
+    }
+  }

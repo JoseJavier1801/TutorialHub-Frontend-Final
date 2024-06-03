@@ -1,0 +1,30 @@
+<div class="sidebar" [ngClass]="{ 'active': showMenu }">
+    <button class="close-button" (click)="toggleMenu()">Cerrar</button>
+    <div class="settings-menu">
+        <p>Eliminar tu perfil de usuario:</p>
+        <button class="menu-button" (click)="deleteProfile()">Eliminar perfil</button>
+        <p>Modificar tu perfil de usuario:</p>
+        <button class="menu-button" (click)="openEditProfile()">Modificar perfil</button>
+
+        <div class="brightness-control">
+            <h4>barra de brillo</h4>
+            <input type="range" min="0" max="100" value="100" class="brightness-slider" (input)="adjustBrightness($event)">
+        </div>
+
+        <!-- Barra de desplazamiento -->
+        <div class="scrollbar"></div>
+    </div>
+</div>
+
+<div class="content" [ngClass]="{ 'active': showMenu }">
+    <button class="settings-button" (click)="toggleMenu()">Ajustes</button>
+    <!-- Contenido principal aquí -->
+</div>
+
+<!-- Ventana emergente para editar perfil del usuario -->
+<app-edit-profile *ngIf="showEditProfile" (cancelEditEvent)="cancelEditProfile()"
+    class="edit-profile-popup"></app-edit-profile>
+
+<!-- Ventana emergente para editar perfil del profesor -->
+<app-edit-teacher-profile *ngIf="showEditProfile && isTeacher" (closeEditEvent)="closeEditTeacherProfile()"
+    class="edit-teacher-profile-popup"></app-edit-teacher-profile>

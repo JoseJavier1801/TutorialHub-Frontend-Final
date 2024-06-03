@@ -1,0 +1,28 @@
+<div class="user-details" *ngFor="let client of clients">
+    <div class="user-photo">
+        <img [src]="client.photo" alt="Client Photo">
+    </div>
+    <div class="user-info">
+        <p class="name"><strong>Nombre:</strong> {{ client.name }}</p>
+        <p class="phone"><strong>Número de teléfono:</strong> {{ client.phone }}</p>
+        <p class="mail"><strong>Correo electrónico:</strong> {{ client.mail }}</p>
+        <p class="date"><strong>Fecha de Nacimiento:</strong> {{ client.date | date:'short' }}</p>
+    </div>
+    <div class="file-upload">
+        <input type="file" id="fileInput" (change)="onFileSelected($event)" accept=".pdf">
+        <button (click)="showModal(client.id)" class="upload-button">Subir archivo</button>
+        <p *ngIf="uploadMessage">{{ uploadMessage }}</p>
+    </div>
+</div>
+
+<div class="modal" [class.show]="isModalVisible">
+    <div class="modal-content">
+        <span class="close" (click)="closeModal()">&times;</span>
+        <h2>Subir archivo</h2>
+        <input type="file" id="modalFileInput" (change)="onFileSelected($event)" accept=".pdf">
+        <textarea [(ngModel)]="comment" placeholder="Añadir un comentario"></textarea>
+        <button (click)="completeUpload()" class="upload-button">Completar subida</button>
+    </div>
+</div>
+
+<div class="overlay" [class.show]="isModalVisible"></div>

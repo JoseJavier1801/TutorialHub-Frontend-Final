@@ -1,0 +1,121 @@
+.mailbox-container {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 60px;
+    font-family: 'Arial', sans-serif;
+    background-color:  #d6edfd;
+}
+
+.mailbox-title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 20px;
+    background-color: rgb(52, 151, 250);
+    padding: 10px;
+}
+
+.mailbox-info {
+    color: #2e2828;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.filter-menu {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(52, 58, 64);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+.filter-button svg {
+  width: 24px; /* Ajusta el ancho del icono */
+  height: 24px; /* Ajusta la altura del icono */
+  margin-right: 8px; /* Ajusta el margen derecho para separar el icono del texto */
+}
+.filter-menu h2 {
+    color: #ffffff;
+    font-size: 50px;
+    margin: 0;
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin: 5px;
+    width: 200px;
+}
+
+.accepted {
+    background-color: green;
+    color: white;
+}
+
+.denied {
+    background-color: red;
+    color: white;
+}
+
+.pending {
+    background-color: gray;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .mailbox-title {
+        font-size: 20px;
+    }
+
+    .mailbox-info {
+        font-size: 14px;
+    }
+
+    .filter-menu h2 {
+        font-size: 18px;
+    }
+
+    .filter-button {
+        padding: 8px 16px;
+        font-size: 14px;
+        width: 150px;
+    }
+    .filter-menu {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgb(52, 58, 64);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around; /* Cambiado a space-around */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten automáticamente en varias líneas */
+}
+
+.filter-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    margin: 5px;
+    width: 45%; /* Cambiado el ancho para ocupar el 45% del contenedor */
+    max-width: 200px; /* Ancho máximo para evitar que los botones sean demasiado grandes */
+}
+
+}

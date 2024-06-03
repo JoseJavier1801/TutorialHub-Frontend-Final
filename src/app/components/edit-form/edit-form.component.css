@@ -1,0 +1,78 @@
+@import 'https://unpkg.com/leaflet@1.7.1/dist/leaflet.css';
+.card {
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    background-color: #f9f9f9; /* Color de fondo del card */
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    background-color: #3498db; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 10px 10px 0 0; /* Borde redondeado solo arriba */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botón ocupa todo el ancho */
+}
+
+.toggle-button:hover {
+    background-color: #2980b9; /* Cambio de color al pasar el ratón */
+}
+
+.form-container {
+    padding: 20px; /* Espaciado interno */
+    display: none; /* Formulario inicialmente oculto */
+}
+
+.expanded .form-container {
+    display: block; /* Mostrar el formulario cuando el card está expandido */
+}
+
+.form-group {
+    margin-bottom: 20px; /* Espaciado entre grupos de formulario */
+}
+
+label {
+    font-weight: bold; /* Texto en negrita para las etiquetas */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Borde redondeado */
+    transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #3498db; /* Color del borde al enfocar */
+}
+
+button[type="button"] {
+    padding: 10px 20px;
+    background-color: #3498db; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+}
+
+button[type="button"]:hover {
+    background-color: #2980b9; /* Color de fondo del botón al pasar el ratón */
+}
+
+#successToast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}

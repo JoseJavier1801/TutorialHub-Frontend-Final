@@ -1,0 +1,104 @@
+.modify-profile {
+    display: flex;
+    align-items: center;
+}
+
+.brightness-control {
+    margin-left: 10px; /* Ajuste el espacio entre el botón "Modificar perfil" y la barra de brillo */
+}
+
+.brightness-slider {
+    width: 150px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    overflow-y: scroll; /* Habilitar desplazamiento vertical */
+}
+
+.settings-menu {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.settings-menu p {
+    margin: 10px 0;
+}
+
+.settings-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settings-menu button:hover {
+    background-color: #ddd;
+}
+
+.content {
+    transition: margin-right 0.3s ease;
+    margin-right: 0;
+}
+
+.settings-button,
+.close-button {
+    position: absolute;
+    top: 10px;
+    background-color: rgb(13, 110, 253);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+}
+
+.close-button {
+    left: 10px;
+    background-color: #e74c3c;
+}
+
+.active {
+    transform: translateX(0);
+}
+
+.edit-profile-popup,
+.edit-teacher-profile-popup {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 1100;
+}
+
+.scrollbar {
+    width: 8px;
+    background-color: #f1f1f1;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+/* Cambiar la apariencia del desplazador */
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #888;
+}
+
+.scrollbar:hover::-webkit-scrollbar-thumb {
+    background-color: #555;
+}

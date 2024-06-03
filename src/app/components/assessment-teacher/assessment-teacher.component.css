@@ -1,0 +1,17 @@
+.assessment-box {
+  border: 1px solid #000000;
+  padding: 10px;
+  margin-bottom: 10px;
+background-color: #fffff9; /* Naranja claro */
+
+
+  border-radius: 10px;
+}
+
+.rating {
+  color: gold;
+}
+
+.comment {
+  margin-top: 5px;
+}

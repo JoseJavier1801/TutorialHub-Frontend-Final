@@ -1,0 +1,143 @@
+.profile-container {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  margin: 40px auto;
+  width: 600px;
+  max-width: 800px;
+  font-family: 'Arial', sans-serif;
+}
+
+.profile-header h2 {
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.teacher-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+.profile-image-container {
+  margin-top: 20px;
+}
+
+.profile-image-container img {
+  width: 10px; /* Nuevo tamaño */
+  height: 10px; /* Nuevo tamaño */
+  object-fit: cover;
+  border-radius: 50%;
+  margin-top: 25px;
+}
+.profile-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.profile-info {
+  text-align: left;
+  width: 100%;
+}
+
+.profile-info p {
+  margin: 15px 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.settings-button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.settings-button-container app-settings {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.settings-button-container app-settings:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333333;
+  padding: 12px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+/* CSS para dispositivos móviles y tabletas */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px; /* Reducir el relleno */
+        margin: 20px auto; /* Reducir el margen */
+        width: 100%; /* Reducir el ancho máximo */
+    }
+
+    .profile-header h2 {
+        font-size: 20px; /* Reducir el tamaño del título */
+        margin-bottom: 10px; /* Reducir el espacio inferior */
+    }
+
+    .teacher-photo {
+        width: 100px; /* Reducir el tamaño de la foto del profesor */
+        height: 100px; /* Reducir el tamaño de la foto del profesor */
+    }
+
+    .profile-image-container img {
+        width: 80px; /* Reducir el tamaño de la imagen de perfil */
+        height: 80px; /* Reducir el tamaño de la imagen de perfil */
+        margin-top: 10px; /* Reducir el espacio superior */
+    }
+
+    .profile-details {
+        margin-top: 20px; /* Reducir el espacio superior */
+    }
+
+    .profile-info p {
+        margin: 10px 0; /* Reducir el espacio entre párrafos */
+        font-size: 16px; /* Reducir el tamaño de fuente */
+    }
+
+    .settings-button-container {
+        top: 10px; /* Reducir la posición superior */
+        right: 10px; /* Reducir la posición derecha */
+    }
+
+    .settings-button-container app-settings {
+        padding: 8px 16px; /* Reducir el tamaño del botón de configuración */
+    }
+
+    .dropdown-content {
+        min-width: 120px; /* Reducir el ancho del menú desplegable */
+    }
+
+    .dropdown-content a {
+        padding: 10px 16px; /* Reducir el espacio en los enlaces del menú desplegable */
+    }
+}
